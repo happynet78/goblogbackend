@@ -24,7 +24,8 @@ func Connect() {
 		log.Println("Connect successfully")
 	}
 	DB = database
-	database.AutoMigrate(
+	_ = database.AutoMigrate(
 		&models.User{},
+		&models.Blog{},
 	)
 }
